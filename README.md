@@ -172,17 +172,25 @@ VAR=10 # define, with no blankspace before and after"="
 ```
 
 ```unset VAR # unset variable, also useful when it is environment variable```
+
 ```readonly VAR=10 # set read_only variable```
+
 ```export VAR=10 # define environment variable```
+
 ```export -p # list all environment variables```
+
 ```export -n VAR # unshow VAR in the following env```
 
 ### Predefined variables
 
 ```$0-9 : command line params, $0 for the name of your script```
+
 ```$# : command line params count```
+
 ```$@, $* : all command line params```
+
 ```$? : returned value of last command```
+
 ```$$ : ID of your process```
 
 in vars.sh:
