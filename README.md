@@ -14,6 +14,7 @@ chmod +x maiden.sh
     hello shell scripting
 ```
 
+********
 
 ## Shell Key Word
 
@@ -154,3 +155,63 @@ exit
     True
     hello shell scripting
 ```
+
+**remember that:exec will execute and quit**
+
+*****
+
+## Shell Variables
+
+* **variables defined by user**
+* **variables predefined**
+* **environment variable**
+
+```
+VAR=10 # define, with no blankspace before and after"="
+# note that we use uppercase for the name of variable habitually
+```
+
+```unset VAR # unset variable, also useful when it is environment variable```
+```readonly VAR=10 # set read_only variable```
+```export VAR=10 # define environment variable```
+```export -p # list all environment variables```
+```export -n VAR # unshow VAR in the following env```
+
+### Predefined variables
+
+```$0-9 : command line params, $0 for the name of your script```
+```$# : command line params count```
+```$@, $* : all command line params```
+```$? : returned value of last command```
+```$$ : ID of your process```
+
+in vars.sh:
+```
+#!/bin/bash 
+
+echo "print $"
+echo "\$0 = $0"
+echo "\$1 = $1"
+echo "\${15} = ${15}"
+echo "\$# = $#"
+echo "\$@ = $@"
+echo "\$* = $*"
+echo "\$$ = $$"
+echo "\$? = $?"
+```
+
+```
+./vars.sh 1 2 3 4 5 6 a b c d e f g h i j
+>>>
+    print $
+    $0 = ./vars.sh
+    $1 = 1
+    ${15} = i
+    $# = 16
+    $@ = 1 2 3 4 5 6 a b c d e f g h i j
+    $* = 1 2 3 4 5 6 a b c d e f g h i j
+    $$ = 35098
+    $? = 0
+```
+
+*******
