@@ -222,4 +222,78 @@ echo "\$? = $?"
     $? = 0
 ```
 
+### String
+
+```
+name="father"
+str="this is a string, I'm your $name"
+echo $str
+>>>
+    this is a string, I'm your father
+```
+
+String Length
+
+```
+str="yes"
+echo ${#str}
+>>>
+    3
+```
+
+Substring
+
+```
+str="abcdefg"
+echo ${str[1]} # "a" index start with 1
+echo ${str:2:3} # "cde", index start with 0, from index 2, 3 chars
+>>>
+    a
+    cde
+```
+
+Find Char In String
+
+```
+str="abcdef"
+expr index $str a
+>>>
+    1 # index start with 1
+```
+
+### Shell Array
+
+```
+arr=(1 2 4 5) # space splited
+echo $arr
+>>>
+    1 2 4 5
+
+echo ${arr[1]} ${arr[4]} # index start with 1
+>>>
+    1 5
+
+arr[1]=6
+echo ${arr[1]}
+>>>
+    6
+
+echo ${arr[@]} # all elements
+>>>
+    6 2 4 5
+
+echo ${#arr}  # length of array
+>>>
+    4
+```
+
+#### Associated Array (关联数组， 类似于字典)
+
+```
+declare -A ascii=(['a']=97 ['b']=98 ['c']=99)
+echo ${ascii[b]} # 注意此处没有引号，有教程上说需要引号，但Arch不能用
+>>>
+    98
+```
+
 *******
